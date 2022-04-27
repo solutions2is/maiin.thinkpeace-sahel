@@ -1,0 +1,68 @@
+.background{
+    background-image: url('img/bg_preview.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.login{
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 1px 15px 1px rgb(90 90 90 / 8%);
+}
+
+#login-legend{
+    color: rgba(10,120,180,50);
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.login-title{
+    margin-top: 75px;
+    margin-bottom: 30px;
+    color: rgba(10,120,180,50);
+    text-align: center;
+}
+
+.mbot20 {
+    margin-bottom: 20px;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.search-input{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #999;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.logo {
+    float: left;
+    height: 50px;
+    text-align: center;
+    margin-right: 40px;
+}
+/*******MAP*****/
+
+
+
