@@ -13,12 +13,18 @@ class IncidentsController extends AppController{
         $this->loadModel('Incident');
     }
 
-    public function dashboard(){
+    public function dashboard(){    
 
-        $country = 'Mali';
+        if(isset($_POST['country_name_change'])){
+            $_SESSION['country'] = $_POST['country_name_change'];
+        }
+        
+        $country = $_SESSION['country'];
+        var_dump($country);
 
         $CountryRegions = $this->Incident->AllRegionByCountry($country);
         $RegionIncidents = $this->Incident->AllIncidentsByRegion($country);
+        
   
         $incidents = $this->Incident->AllWithCategory();
 
@@ -39,7 +45,8 @@ class IncidentsController extends AppController{
         $categories = $this->Category->extract('id', 'category_name');
 
         $form = new BootstrapForm($_POST);
-        $this->render('admin.incidents.dashboard', compact('form', 'categories', 'countries', 'regions', 'errors', 'incidents', 'nbr_incidents', 'nbr_verified', 'CountryRegions', 'RegionIncidents'));
+        
+        $this->render('admin.incidents.dashboard', compact('form', 'categories', 'countries', 'regions', 'errors', 'incidents', 'nbr_incidents', 'nbr_verified', 'CountryRegions', 'RegionIncidents', 'country'));
     }
 
     public function add(){
