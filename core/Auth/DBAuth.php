@@ -33,6 +33,7 @@ class DBAuth {
                 $_SESSION['last_name'] = $user->last_name;
                 $_SESSION['fname'] = $user->fname;
                 $_SESSION['email'] = $user->email;
+                $_SESSION['country'] = 'Mali';
                 return true;
             }
         }

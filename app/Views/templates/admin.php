@@ -251,6 +251,28 @@
         </div>
         <div class="col col-9 col-sm-9">
 
+        <?php if ($_GET['p'] == 'admin.incidents.dashboard') {
+        
+        ?>
+            <div class="row">
+                <div class="col col-6 col-sm-6">
+                    <form action="" method="post" class="form-inline">
+                        <div class="form-group mx-sm-3 mb-2">
+                            <select class="form-control" name="country_name_change" id="country" style="margin-top:10px">
+                                <option value="Burkina-Faso" <?= $country == 'Burkina-Faso' ? 'Selected' : ''; ?>>Burkina Faso</option>
+                                <option value="Mali" <?= $country == 'Mali' ? 'Selected' : ''; ?>>Mali</option>
+                                <option value="Niger" <?= $country == 'Niger' ? 'Selected' : ''; ?>>Niger</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Changer</button>
+                    </form>
+                </div>
+            </div>
+        <?php 
+        }
+        ?>
+            
+
             <?= $content; ?>
         </div>
     </div>
