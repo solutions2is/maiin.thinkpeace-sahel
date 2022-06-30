@@ -31,6 +31,20 @@ class Table
         return $this->query("SELECT * FROM {$this->table} WHERE user_id = ?", [$id], true);
     }
 
+    public function allOrderedCountry(){
+        return $this->query('SELECT * FROM ' . $this->table. ' Order by country_name');
+    }
+    
+    public function allOrderedRegion(){
+        return $this->query('SELECT * FROM ' . $this->table. ' Order by region_name');
+    }
+    public function allOrderedCircle(){
+        return $this->query('SELECT * FROM ' . $this->table. ' Order by circle_name');
+    }
+    public function allOrderedTown(){
+        return $this->query('SELECT * FROM ' . $this->table. ' Order by town_name');
+    }
+
 
     public function update($id, $fields){
         $sql_parts = [];
@@ -73,6 +87,42 @@ class Table
 
     public function extract($key, $value){
         $records = $this->all();
+        $return = [];
+        foreach($records as $v){
+            $return[$v->$key] = $v->$value;
+        }
+        return $return;
+    }
+
+    public function extractCountry($key, $value){
+        $records = $this->allOrderedCountry();
+        $return = [];
+        foreach($records as $v){
+            $return[$v->$key] = $v->$value;
+        }
+        return $return;
+    }
+
+    public function extractRegion($key, $value){
+        $records = $this->allOrderedRegion();
+        $return = [];
+        foreach($records as $v){
+            $return[$v->$key] = $v->$value;
+        }
+        return $return;
+    }
+
+    public function extractCircle($key, $value){
+        $records = $this->allOrderedCircle();
+        $return = [];
+        foreach($records as $v){
+            $return[$v->$key] = $v->$value;
+        }
+        return $return;
+    }
+
+    public function extractTown($key, $value){
+        $records = $this->allOrderedTown();
         $return = [];
         foreach($records as $v){
             $return[$v->$key] = $v->$value;
